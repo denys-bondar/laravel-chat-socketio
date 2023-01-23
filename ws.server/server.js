@@ -7,6 +7,8 @@ var request = require('request'),
 Redis = require('ioredis'),
 redis = new Redis();
 
-io.on('connection', function() {
-    console.log('New connection');
+io.on('connection', function(socket) {
+    console.log('New connection', socket.id);
+
+    socket.send('msg from server');
 })

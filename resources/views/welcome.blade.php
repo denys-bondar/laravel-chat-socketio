@@ -12,7 +12,10 @@
 
     <script>
         var socket = io(':6001');
+        socket.on('message', function(data){
+            console.log('from server:', data)
 
+        })
     </script>
 
     </body>
